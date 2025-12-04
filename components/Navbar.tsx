@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/RNCreative Logo.png';
+import logoImg from '../assets/RNCreative Logo.svg';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,8 +67,7 @@ const Navbar: React.FC = () => {
                  kun je het gedeelte hieronder (van <span... tot </span>) verwijderen.
                  Anders staat de naam er dubbel.
               */}
-              <span className="text-2xl font-bold tracking-tighter">
-                RN<span className="text-rn-blue">Creative</span>
+              <span className="text-rn-blue">Creative</span>
               </span>
           </Link>
           {/* --- LOGO SECTIE EINDE --- */}
