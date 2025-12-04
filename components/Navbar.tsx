@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Rocket } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/RNCreative Logo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,15 +54,24 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
+          {/* --- LOGO SECTIE START --- */}
           <Link to="/" className="flex items-center gap-2 group">
-             <div className="bg-rn-orange p-2 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-                <Rocket className="w-6 h-6 text-white" />
-             </div>
-             <span className="text-2xl font-bold tracking-tighter">
-               RN<span className="text-rn-blue">Creative</span>
-             </span>
+              {/* De afbeelding */}
+              <img 
+                src={logoImg} 
+                alt="RNCreative" 
+                className="h-10 w-auto object-contain" // Pas h-10 aan naar h-12 of h-8 om de grootte te wijzigen
+              />
+
+              {/* LET OP: Als je logo-afbeelding zelf al tekst bevat, 
+                 kun je het gedeelte hieronder (van <span... tot </span>) verwijderen.
+                 Anders staat de naam er dubbel.
+              */}
+              <span className="text-2xl font-bold tracking-tighter">
+                RN<span className="text-rn-blue">Creative</span>
+              </span>
           </Link>
+          {/* --- LOGO SECTIE EINDE --- */}
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
