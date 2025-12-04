@@ -6,7 +6,7 @@ const Portfolio: React.FC = () => {
     {
       title: "Installatiebedrijf De Vries",
       category: "Installatietechniek",
-      img: "https://images.unsplash.com/photo-1581094794329-cd136ce404e7?auto=format&fit=crop&q=80&w=800",
+      img: "https://images.pexels.com/photos/6474294/pexels-photo-6474294.jpeg",
       description: "Een strakke corporate site met offerte module voor een groot installatiebedrijf."
     },
     {
@@ -18,7 +18,7 @@ const Portfolio: React.FC = () => {
     {
       title: "Loodgieter Service Plus",
       category: "Loodgieter",
-      img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800",
+      img: "https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg",
       description: "Frisse, betrouwbare uitstraling met directe WhatsApp integratie."
     }
   ];
