@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+
+// Zorg dat je logo.svg in de map src/assets staat!
 import logoImg from '../assets/logo.svg';
 
 const Navbar: React.FC = () => {
@@ -24,7 +26,6 @@ const Navbar: React.FC = () => {
     if (target.startsWith('#')) {
       if (location.pathname !== '/') {
         navigate('/');
-        // Wait for navigation then scroll
         setTimeout(() => {
           const element = document.querySelector(target);
           element?.scrollIntoView({ behavior: 'smooth' });
@@ -54,23 +55,21 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* --- LOGO SECTIE START --- */}
+          {/* --- AANGEPAST LOGO DEEL --- */}
           <Link to="/" className="flex items-center gap-2 group">
-              {/* De afbeelding */}
-              <img 
+             {/* Je logo afbeelding */}
+             <img 
                 src={logoImg} 
-                alt="RNCreative" 
-                className="h-10 w-auto object-contain" // Pas h-10 aan naar h-12 of h-8 om de grootte te wijzigen
-              />
-
-              {/* LET OP: Als je logo-afbeelding zelf al tekst bevat, 
-                 kun je het gedeelte hieronder (van <span... tot </span>) verwijderen.
-                 Anders staat de naam er dubbel.
-              */}
-              <span className="text-rn-blue">Creative</span>
-              </span>
+                alt="RNCreative Logo" 
+                className="h-10 w-auto object-contain" 
+             />
+             
+             {/* Hier is 'RN' weggehaald en 'Creative' wit gemaakt */}
+             <span className="text-2xl font-bold tracking-tighter text-white">
+                Creative
+             </span>
           </Link>
-          {/* --- LOGO SECTIE EINDE --- */}
+          {/* --------------------------- */}
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
