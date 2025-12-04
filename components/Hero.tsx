@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             <span className="block text-white">Jouw Vakmanschap,</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-rn-orange via-rn-blue to-rn-purple">
-              Ons Meesterwerk.
+              Online Meesterwerk.
             </span>
           </h1>
           
