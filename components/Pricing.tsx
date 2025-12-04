@@ -12,7 +12,7 @@ const Pricing: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Investeren in <span className="text-rn-orange">Groei</span></h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Kwaliteit kost geld, maar levert geld op. Kies voor een eenmalige investering of lease je website zoals je je bus least.
+            Kwaliteit kost geld, maar levert ook geld op. Kies voor een eenmalige investering of lease je website.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ const Pricing: React.FC = () => {
         <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-2 text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                 <Info className="w-4 h-4 text-rn-blue" />
-                <span className="text-sm">Goedkoop is duurkoop. Wij leveren professioneel werk dat zich terugverdient.</span>
+                <span className="text-sm"> Wij leveren professioneel werk dat zich terugverdient.</span>
             </div>
         </div>
       </div>

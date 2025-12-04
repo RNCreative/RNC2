@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
                 <a href="tel:+31612345678" className="hover:text-white transition-colors">+31 6 1234 5678</a>
               </li>
               <li className="mt-4 text-sm text-gray-600">
-                KVK: 12345678<br />
-                Eindhoven, Nederland
+                KVK: <br />
+                Breukelen, Nederland
               </li>
             </ul>
           </div>
