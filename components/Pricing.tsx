@@ -27,7 +27,8 @@ const Pricing: React.FC = () => {
             
             <div className="mb-8">
               <div className="flex items-baseline">
-                <span className="text-4xl font-bold text-white">€1.500</span>
+                <span className="text-gray-500 ml-2">v.a.</span>
+                <span className="text-4xl font-bold text-white">€1.200</span>
                 <span className="text-gray-500 ml-2">eenmalig</span>
               </div>
               <div className="flex items-baseline mt-2">
@@ -78,6 +79,7 @@ const Pricing: React.FC = () => {
             
             <div className="mb-8">
               <div className="flex items-baseline">
+                <span className="text-gray-500 ml-2">v.a.</span>
                 <span className="text-4xl font-bold text-white">€139</span>
                 <span className="text-gray-500 ml-2">per maand</span>
               </div>
