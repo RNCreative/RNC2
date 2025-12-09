@@ -3,50 +3,14 @@ import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 export const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
-  
-  // 1. We houden de data bij in de state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    type: 'waas', // standaardwaarde van de select
-    message: ''
-  });
-
-  // 2. Hulpfunctie voor Netlify encoding
-  const encode = (data: any) => {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
-
-  // 3. Functie om input wijzigingen op te vangen
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-
-    // 4. De echte verzending naar Netlify
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ 
-        "form-name": "contact", 
-        ...formData 
-      }),
-    })
-    .then(() => {
+    // Simulate API call
+    setTimeout(() => {
       setStatus('success');
-      // Optioneel: Formulier resetten na succes
-      setFormData({ name: '', email: '', type: 'waas', message: '' });
-    })
-    .catch((error) => {
-      console.error(error);
-      alert("Er ging iets mis bij het versturen.");
-      setStatus('idle');
-    });
+    }, 1500);
   };
 
   if (status === 'success') {
@@ -69,18 +33,12 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
-      {/* BELANGRIJK: De verborgen input voor Netlify */}
-      <input type="hidden" name="form-name" value="contact" />
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Naam</label>
           <input 
             type="text" 
-            id="name"
-            name="name" // Toegevoegd
-            value={formData.name} // Toegevoegd
-            onChange={handleChange} // Toegevoegd
+            id="name" 
             required
             className="w-full bg-gray-900/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rn-orange focus:ring-1 focus:ring-rn-orange transition-colors placeholder-gray-600"
             placeholder="Jan de Vries"
@@ -91,9 +49,6 @@ export const ContactForm: React.FC = () => {
           <input 
             type="email" 
             id="email" 
-            name="email" // Toegevoegd
-            value={formData.email} // Toegevoegd
-            onChange={handleChange} // Toegevoegd
             required
             className="w-full bg-gray-900/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rn-orange focus:ring-1 focus:ring-rn-orange transition-colors placeholder-gray-600"
             placeholder="jan@bedrijf.nl"
@@ -105,9 +60,6 @@ export const ContactForm: React.FC = () => {
         <label htmlFor="type" className="block text-sm font-medium text-gray-400 mb-2">Ik ben geïnteresseerd in</label>
         <select 
             id="type"
-            name="type" // Toegevoegd
-            value={formData.type} // Toegevoegd
-            onChange={handleChange} // Toegevoegd
             className="w-full bg-gray-900/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rn-orange focus:ring-1 focus:ring-rn-orange transition-colors [&>option]:bg-gray-900"
         >
             <option value="waas">WaaS Model (Lease)</option>
@@ -120,9 +72,6 @@ export const ContactForm: React.FC = () => {
         <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Bericht</label>
         <textarea 
           id="message" 
-          name="message" // Toegevoegd
-          value={formData.message} // Toegevoegd
-          onChange={handleChange} // Toegevoegd
           rows={4} 
           required
           className="w-full bg-gray-900/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-rn-orange focus:ring-1 focus:ring-rn-orange transition-colors placeholder-gray-600"
