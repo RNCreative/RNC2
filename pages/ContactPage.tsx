@@ -30,7 +30,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">Bel ons direct</div>
-                    <div className="text-lg font-bold group-hover:text-rn-orange transition-colors">+31 6 5095 9116</div>
+                    <div className="text-lg font-bold group-hover:text-rn-orange transition-colors">+31 6 1234 5678</div>
                   </div>
                 </a>
 
